@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshScan – Food Quality Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <!-- Google Fonts: Playfair Display + DM Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="nav-logo">🍃 FreshScan</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#predict" class="nav-cta">Try the Model</a>
+    </div>
+  </nav>
+
+  <!-- ===================== HOME SECTION ===================== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge">AI-Powered Food Intelligence</span>
+      <h1 class="hero-title">
+        Know If Your Food<br />
+        <em>Is Fresh or Rotten</em>
+      </h1>
+      <p class="hero-subtitle">
+        Upload any fruit or vegetable image and our deep learning model
+        instantly classifies its freshness — in under a second.
+      </p>
+      <a href="#predict" class="btn-primary">
+        <span>Try the Model</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="scan-card">
+        <div class="scan-img-wrap">
+          <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=300&q=80" alt="Fresh Apples" class="scan-img" />
+          <div class="scan-overlay">
+            <div class="scan-line"></div>
+          </div>
+        </div>
+        <div class="scan-result-preview">
+          <span class="dot green"></span>
+          <span>Apple_Healthy — 97.3%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">AI That Sees What Your Eyes Miss</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            FreshScan uses a <strong>ResNet50 / EfficientNet</strong> deep learning model
+            trained on thousands of labeled images across 28 classes of fruits and vegetables.
+          </p>
+          <p>
+            It detects subtle visual cues — color changes, texture degradation, and surface
+            irregularities — that indicate whether a food item is still safe to eat.
+          </p>
+          <p>
+            This system is designed for use in smart agriculture, supermarkets, food logistics,
+            and at home — making AI-powered freshness detection accessible to everyone.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">28</span>
+            <span class="stat-label">Food Classes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">95%+</span>
+            <span class="stat-label">Model Accuracy</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">&lt;1s</span>
+            <span class="stat-label">Prediction Time</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Categories</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES SECTION ===================== -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-label">Capabilities</div>
+      <h2 class="section-title">Everything You Need</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Food Type Detection</h3>
+          <p>Identifies the specific fruit or vegetable from the uploaded image across 14 supported types.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Freshness Classification</h3>
+          <p>Classifies your food as <strong>Healthy</strong> or <strong>Rotten</strong> with a confidence percentage.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get your prediction in under one second. No login. No waiting. Just drag, drop, and discover.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Works Everywhere</h3>
+          <p>Fully responsive — use it on your phone, tablet, or desktop without any installation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌱</div>
+          <h3>Reduce Food Waste</h3>
+          <p>Make smarter decisions about what to eat or discard, helping reduce household and industrial waste.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy First</h3>
+          <p>Images are processed locally and never stored. Your data stays yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PREDICT SECTION ===================== -->
+  <section id="predict" class="predict">
+    <div class="container">
+      <div class="section-label">AI Scanner</div>
+      <h2 class="section-title">Analyze Your Food</h2>
+      <p class="predict-sub">Upload a clear image of a fruit or vegetable to get an instant quality assessment.</p>
+
+      <div class="predict-card">
+        <!-- Upload Area -->
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="fileInput" accept="image/*" hidden />
+          <div class="upload-placeholder" id="uploadPlaceholder">
+            <div class="upload-icon">📂</div>
+            <p class="upload-main">Drag & drop your image here</p>
+            <p class="upload-sub">or <span class="upload-link" id="browseBtn">browse files</span></p>
+            <p class="upload-hint">Supports JPG, PNG, WEBP</p>
+          </div>
+          <!-- Image preview -->
+          <div class="preview-wrap" id="previewWrap" style="display:none;">
+            <img id="previewImg" src="" alt="Preview" class="preview-img" />
+            <button class="remove-btn" id="removeBtn">✕ Remove</button>
+          </div>
+        </div>
+
+        <!-- Predict Button -->
+        <button class="btn-predict" id="predictBtn" disabled>
+          <span id="btnText">Predict Freshness</span>
+          <div class="spinner" id="spinner" style="display:none;"></div>
+        </button>
+
+        <!-- Result Box -->
+        <div class="result-box" id="resultBox" style="display:none;">
+          <div class="result-inner">
+            <div class="result-icon" id="resultIcon"></div>
+            <div class="result-details">
+              <p class="result-label">Prediction</p>
+              <p class="result-class" id="resultClass">—</p>
+              <div class="confidence-bar-wrap">
+                <div class="confidence-bar" id="confidenceBar"></div>
+              </div>
+              <p class="result-confidence" id="resultConfidence">—</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Box -->
+        <div class="error-box" id="errorBox" style="display:none;">
+          <span>⚠️ </span><span id="errorMsg">Something went wrong. Please try again.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>🍃 FreshScan — Graduation Project, Data Science & AI</p>
+    <p class="footer-sub">Built with TensorFlow · Flask · Love</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
